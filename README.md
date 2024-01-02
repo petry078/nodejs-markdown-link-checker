@@ -21,3 +21,7 @@ Link https://github.com is 200
 Link http://google.com is 200
 Link https://github.aaaaa.com is FetchError: request to https://github.aaaaa.com/ failed, reason: Hostname/IP does not match certificate's altnames: Host: github.aaaaa.com. is not in the cert's altnames
 ```
+
+Future work:
+
+* Implement this logic in a web server as a fullstack application that receives a file from a client front-end and prints out the results.

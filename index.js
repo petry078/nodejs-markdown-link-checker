@@ -1,7 +1,7 @@
 import fs from 'fs'
 import fetch from 'node-fetch'
 
-// Read markdown file
+// 1. Read markdown file
 const readMarkdownFile = (path) => {
     try {
         return fs.readFileSync(path, 'utf8')
@@ -13,7 +13,7 @@ const readMarkdownFile = (path) => {
 
 const markdownContent = readMarkdownFile('README.md')//actual path of the file
 
-// Extract links from markdown content
+// 2. Extract links from markdown content
 const extractLinks = (markdownContent) => {
     const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s]+)\)/g;
     const links = [];
@@ -30,7 +30,7 @@ const extractLinks = (markdownContent) => {
 
 const links = extractLinks(markdownContent)
 
-// Check links
+// 3 .Check links
 const checkLinks = (links) => {
     links.forEach(link => {
         fetch(link.url)
